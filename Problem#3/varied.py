@@ -1,16 +1,18 @@
 def process_input(input_string):
-      # Split into separate strings
+    # Split the input string into separate strings
+    tokens = input_string.split()
 
     # Convert strings to floats
-    
+    nums = [float(token) for token in tokens]
 
-    # Get max and average
-    max_value = 
-    average_value = 
+    # Get the max and average
+    max_value = max(nums)
+    average_value = sum(nums) / len(nums)
+
     return max_value, average_value
 
 if __name__ == "__main__":
-    # User inputs string w/ numbers
+    # User inputs a space-separated string of numbers
     user_input = input("Enter a space-separated string of numbers: ")
 
     # Call the function and get the results
