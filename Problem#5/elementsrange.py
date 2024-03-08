@@ -10,7 +10,7 @@ def filter_and_print_range(input_list, min_val, max_val):
             filtered_numbers.append(number)
 
     # Print the filtered numbers separated by commas
-    print(','.join(map(str, filtered_numbers)), end='')
+    print(','.join(map(str, filtered_numbers)), end=',')
 
 if __name__ == '__main__':
     # Get input for the list of integers

@@ -6,8 +6,7 @@ def food_input():
             break
         else:
             food = tokens[0]
-            quantity = int(tokens[1])
-            print(f"Eating {quantity} {food} a day keeps you happy and healthy.")
+            print(f"Eating {' '.join(tokens[1:])} {food} a day keeps you happy and healthy.")
 
 if __name__ == "__main__":
     food_input()

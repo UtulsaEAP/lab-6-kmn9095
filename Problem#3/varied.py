@@ -5,6 +5,9 @@ def process_input(input_string):
     # Convert strings to floats
     nums = [float(token) for token in tokens]
 
+    if len(nums) == 0:
+        return None, None  # If no numbers provided, return None for max and average
+
     # Get the max and average
     max_value = max(nums)
     average_value = sum(nums) / len(nums)
@@ -18,5 +21,8 @@ if __name__ == "__main__":
     # Call the function and get the results
     max_value, average_value = process_input(user_input)
 
-    print(f'Max Value: {max_value:.2f}')
-    print(f'Average Value: {average_value:.2f}')
+    if max_value is not None and average_value is not None:
+        print(f'Max Value: {max_value:.2f}')
+        print(f'Average Value: {average_value:.2f}')
+    else:
+        print("No numbers provided.")
