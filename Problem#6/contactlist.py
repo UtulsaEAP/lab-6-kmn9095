@@ -7,6 +7,11 @@ def process_user_contacts(user_input):
     # Remove any leading/trailing whitespace from each token
     tokens = [token.strip() for token in tokens]
 
+    # Ensure that there are an even number of tokens (name and phone number pairs)
+    if len(tokens) % 2 != 0:
+        print("Invalid input format. Please provide name-phone number pairs.")
+        return
+
     # Iterate over the tokens to populate the dictionary
     for i in range(0, len(tokens), 2):
         name, phone_number = tokens[i], tokens[i + 1]
@@ -23,5 +28,4 @@ def process_user_contacts(user_input):
 
 if __name__ == '__main__':
     user_input = input("Enter word pairs (name, phone number): ")
-
     process_user_contacts(user_input)
