@@ -1,22 +1,18 @@
 def in_order(nums):
-    # Check if the list is empty or has only one element (already sorted)
-    if len(nums) <= 1:
-        return True
+    # Type your code here.
+    num_list = []
+    new_list = nums.copy()
+
+    for _ in range(0, len(new_list)):
+        num_list.append(min(new_list))
+        new_list.remove(min(new_list))
     
-    # Iterate through the list from index 1 to the end
-    for i in range(1, len(nums)):
-        # Compare the current element with the previous one
-        if nums[i] < nums[i - 1]:
-            # Not in order
-            return False
-        
-    # Check if the list is sorted in descending order
-    descending = all(nums[i] >= nums[i - 1] for i in range(1, len(nums)))
+    if num_list == nums:
+        return(True)
     
-    if descending:
-        return True  # In order (descending)
-    else:
-        return True  # In order (ascending)
+    print(num_list)
+    print(nums)
+    
 
 if __name__ == '__main__':
     # Test out-of-order example

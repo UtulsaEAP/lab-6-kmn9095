@@ -1,31 +1,23 @@
+'''
+Kelsey Nocck
+3/27/24
+'''
+
 def process_user_contacts(user_input):
-    user_contacts = {}
+    current_contact = []
+    user_input = user_input.split(" ")
+    dictionary = {}
 
-    # Split the input by commas to get name-phone number pairs
-    tokens = user_input.split(',')
-
-    # Remove any leading/trailing whitespace from each token
-    tokens = [token.strip() for token in tokens]
-
-    # Ensure that there are an even number of tokens (name and phone number pairs)
-    if len(tokens) % 2 != 0:
-        print("Invalid input format. Please provide name-phone number pairs.")
-        return
-
-    # Iterate over the tokens to populate the dictionary
-    for i in range(0, len(tokens), 2):
-        name, phone_number = tokens[i], tokens[i + 1]
-        user_contacts[name] = phone_number
-
-    # Input the name to search for
-    contact_name = input("Enter the contact name: ")
-
-    # Output the corresponding phone number if found
-    if contact_name in user_contacts:
-        print(f"Phone number for {contact_name}: {user_contacts[contact_name]}")
-    else:
-        print(f"{contact_name} not found in the contact list.")
+    for i in range(0, len(user_input), 1):
+        current_contact = user_input[i].split(",")
+        dictionary.update({current_contact[0]:current_contact[1]})
+    
+    search_name = input("Enter contact name: ")
+    print(dictionary.get(search_name))
+   
 
 if __name__ == '__main__':
+    # Get input for word pairs
     user_input = input("Enter word pairs (name, phone number): ")
+    # Call the function to process user contacts
     process_user_contacts(user_input)
